@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META TAGS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="32x32" href=".png">
+
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/mep-logo.png" alt="">
+      </a>
+    </div>
+  </header>
+
+
+<main>
+  <section class="hero">
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="bg-video">
+      <source src="home-bg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="text">
+      <h1>HAPPY VALENTINES DAY</h1>
+      <h3>MEPANGILINAN GROUP OF COMPANIES</h3>
+    </div>
+
+    <div class="form-container">
+      <label for="userName">Enter your name here: <span style="color:red">*</span></label>
+      <input type="text" id="userName" placeholder="Your name" required>
+    </div>
+
+
+
+  <div class="button">
+  <h3>Click here which one you wanna see!</h3>
+  <div class="button-group">
+    <button class="val-btn cute">Cute</button>
+    <button class="val-btn romantic">Romantic</button>
+     <button class="val-btn witty">Witty</button>
+  </div>
+</div>
+
+
+  </section>
+</main>
+
+
+
+
+<div class="val-modal" id="valModal">
+  <!-- Modal box -->
+  <div class="modal-content">
+    <!-- Background video inside modal -->
+    <video autoplay muted loop class="modal-bg-video">
+      <source src="modal-bg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay to make text readable -->
+    <div class="modal-overlay"></div>
+
+    <!-- Modal content text -->
+    <span class="close-modal">&times;</span>
+    <h2 id="modalTitle">Your Valentine</h2>
+    <p id="modalMessage">Message will appear here...</p>
+  </div>
+</div>
+
+
+
+<!-- HIDDEN MESSAGE TEMPLATES -->
+<div class="message-data" style="display:none;">
+
+  <!-- CUTE MESSAGES -->
+  <div id="cute-messages">
+    <p>Hi {{name}} 🥰 You are pawsitively adorable today! 💕</p>
+    <p>{{name}}, you just made Valentine’s Day extra cute 💖</p>
+    <p>Sending you smiles, sweets, and warm hugs today, {{name}} 🌸</p>
+    <p>{{name}}, your cuteness is unmatched today 💞</p>
+    <p>Hope your Valentine’s Day is as sweet as you, {{name}} 🍬</p>
+    <p>{{name}}, you bring joy everywhere you go! 🐾</p>
+    <p>Hey {{name}}, today is all about your adorable vibes 💖</p>
+    <p>{{name}}, you make hearts flutter just by being you 💘</p>
+    <p>Wishing you a day full of giggles and love, {{name}} 😊</p>
+    <p>{{name}}, you are the definition of cuteness overload 🥰</p>
+    <p>Happy Valentine’s Day, {{name}}! Spread the smiles 💕</p>
+    <p>{{name}}, may your day be filled with chocolate and hugs 🍫</p>
+    <p>You’re so precious, {{name}} 💖 Have a sweet day!</p>
+    <p>{{name}}, your smile makes today extra special 🌸</p>
+    <p>Lots of love to you, {{name}} 💞 Stay cute!</p>
+    <p>{{name}}, sending you virtual hugs and kisses 😘</p>
+    <p>Hey cutie, {{name}}! Enjoy your Valentine’s 💖</p>
+    <p>{{name}}, your sweetness is contagious! 🍬</p>
+    <p>May your day be as cute as your heart, {{name}} 💕</p>
+    <p>{{name}}, you’re a bundle of joy today 🐾</p>
+    <p>Sending love and giggles your way, {{name}} 🥰</p>
+    <p>{{name}}, you make today extra sparkly ✨</p>
+    <p>Stay adorable, {{name}} 💖 Happy Valentine’s!</p>
+    <p>{{name}}, may your heart be full of happiness today 💕</p>
+    <p>Hey {{name}}, your cuteness lights up the day 🌸</p>
+    <p>{{name}}, here’s a virtual cupcake for you 🧁💞</p>
+    <p>Lots of hugs for you today, {{name}} 🤗</p>
+    <p>{{name}}, your charm is irresistible 💖</p>
+    <p>Happy Valentine’s, {{name}}! Keep smiling 🌸</p>
+    <p>{{name}}, may today be filled with giggles 💕</p>
+    <p>You’re simply the cutest, {{name}} 🥰</p>
+    <p>{{name}}, sending love and sparkles ✨💖</p>
+    <p>Hey {{name}}, hope your day is as sweet as candy 🍬</p>
+    <p>{{name}}, you make the world brighter 💕</p>
+    <p>Smiles and hugs to you, {{name}} 🐾</p>
+    <p>{{name}}, today is all about your cuteness 💖</p>
+    <p>Wishing you a day full of fun and love, {{name}} 🌸</p>
+    <p>{{name}}, you’re the sweetest thing today 💞</p>
+    <p>Have a delightful Valentine’s Day, {{name}} 🥰</p>
+    <p>{{name}}, enjoy the chocolate and love 💖🍫</p>
+    <p>Your smile is magic, {{name}} ✨</p>
+    <p>{{name}}, you make hearts happy 💕</p>
+    <p>Virtual hugs and kisses, {{name}} 😘</p>
+    <p>{{name}}, today is sparkling just for you ✨💖</p>
+    <p>Stay cute and happy, {{name}} 🌸</p>
+    <p>{{name}}, love and smiles coming your way 💞</p>
+    <p>Hope your day is magical, {{name}} ✨</p>
+    <p>{{name}}, sending sweetness and joy 💖🍬</p>
+    <p>Hey {{name}}, you’re adorable today 🥰</p>
+    <p>{{name}}, your day should be filled with fun and love 💕</p>
+    <p>Smile big today, {{name}} 😄💖</p>
+  </div>
+
+  <!-- ROMANTIC MESSAGES -->
+  <div id="romantic-messages">
+    <p>Dear {{name}} ❤️ Love is in the air, and today is all about you.</p>
+    <p>{{name}}, may your heart be filled with warmth and romance 💘</p>
+    <p>Every love story is special, but yours is my favorite, {{name}} 💞</p>
+    <p>{{name}}, today is perfect for sharing love 💖</p>
+    <p>Happy Valentine’s, {{name}}! Sending my heart to you 💕</p>
+    <p>{{name}}, may your day be full of passion and smiles 😍</p>
+    <p>Roses are red, violets are blue, {{name}}, my heart belongs to you 🌹</p>
+    <p>{{name}}, let love wrap around your heart today 💘</p>
+    <p>Wishing you endless romance and hugs, {{name}} 💖</p>
+    <p>{{name}}, you make every moment magical 💞</p>
+    <p>My heart beats for you today, {{name}} ❤️</p>
+    <p>{{name}}, today is for love, smiles, and sweet moments 💕</p>
+    <p>Sending romantic vibes your way, {{name}} 💘</p>
+    <p>{{name}}, you’re the star in my Valentine’s sky ✨💖</p>
+    <p>Every heartbeat whispers your name, {{name}} 💞</p>
+    <p>{{name}}, love is blooming just for you 🌹</p>
+    <p>Happy Valentine’s, {{name}}! Feel the love 💖</p>
+    <p>{{name}}, your smile makes my heart skip 💘</p>
+    <p>All my love is with you today, {{name}} 💞</p>
+    <p>{{name}}, you are my Valentine always ❤️</p>
+    <p>Sending love letters to you, {{name}} 💌</p>
+    <p>{{name}}, may your day be full of sweet kisses 💖</p>
+    <p>Romance is everywhere, just look at us, {{name}} 💘</p>
+    <p>{{name}}, you make love feel magical ✨💞</p>
+    <p>Happy Valentine’s, {{name}}! You are adored 💖</p>
+    <p>{{name}}, today the world is sweeter because of you 💕</p>
+    <p>My heart beats for you today, {{name}} ❤️</p>
+    <p>{{name}}, let’s make memories full of love 💞</p>
+    <p>Roses, chocolate, and you, {{name}} 💖</p>
+    <p>{{name}}, your love lights up the day 💘</p>
+    <p>Happy Valentine’s, {{name}}! Feel cherished 💞</p>
+    <p>{{name}}, my heart belongs to you 💖</p>
+    <p>May love surround you today, {{name}} 💕</p>
+    <p>{{name}}, you are my sweetest Valentine 💘</p>
+    <p>Sending romantic hugs and kisses, {{name}} 💞</p>
+    <p>{{name}}, love is all around us today 💖</p>
+    <p>Happy Valentine’s, {{name}}! You are special ❤️</p>
+    <p>{{name}}, every heartbeat says your name 💘</p>
+    <p>May your Valentine’s Day be magical, {{name}} 💞</p>
+    <p>{{name}}, today is full of love and warmth 💖</p>
+    <p>My heart is yours today, {{name}} ❤️</p>
+    <p>{{name}}, roses and romance are for you 🌹</p>
+    <p>Feel the love, {{name}} 💘</p>
+    <p>{{name}}, you are cherished beyond words 💞</p>
+    <p>Happy Valentine’s, {{name}}! You’re adored 💖</p>
+    <p>{{name}}, love and magic fill your day 💕</p>
+    <p>Every moment is sweeter with you, {{name}} 💘</p>
+    <p>{{name}}, you are my Valentine forever ❤️</p>
+    <p>Sending you all my love, {{name}} 💞</p>
+    <p>{{name}}, today is made for romance 💖</p>
+    <p>My heart beats only for you, {{name}} 💘</p>
+  </div>
+
+
+
+   <div id="witty-messages">
+      <p>Happy Valentine’s Day! Sana smooth ang tasks today ✨, {{name}}</p>
+      <p>Valentine’s Day na—pero deadlines pa rin 😄 Have a great day,{{name}}!</p>
+      <p>Sending Valentine’s Day good vibes sa work today 💼❤️, {{name}}</p>
+      <p>Happy Valentine’s! Sana walang urgent today 🤞, {{name}}</p>
+      <p>Happy Valentine’s Day, team! Salamat sa solid teamwork ❤️, {{name}}</p>
+      <p>Valentine’s Day man o hindi, appreciate working with you all, {{name}}!</p>
+      <p>Sharing some Valentine’s Day love—team edition 😄, {{name}}</p>
+      <p>Happy Valentine’s! Thanks for making work less stressful 💖, {{name}}</p>
+      <p>Roses are red, violets are blue, happy Valentine’s—let’s finish our to-do 😆, {{name}}</p>
+      <p>Valentine’s Day reminder: coffee is still our true love ☕❤️, {{name}}</p>
+      <p>Happy Valentine’s! May meetings be short today 🙏, {{name}}</p>
+      <p>Sana today’s emails reply themselves 😎 Happy Valentine’s, {{name}}!</p>
+      <p>Love is in the air… but so is the deadline 😅, {{name}}</p>
+      <p>Teamwork makes the dream work 💌 Happy Valentine’s Day, {{name}}!</p>
+      <p>Sending virtual chocolates and hugs 🍫🤗 Happy Valentine’s, {{name}}!</p>
+      <p>Happy Valentine’s! Sana wala munang extra tasks today 💝, {{name}}</p>
+      <p>Work hard, love harder! 💼❤️, {{name}}</p>
+      <p>Roses are red, inbox is full—let’s survive today together 😆, {{name}}</p>
+      <p>Valentine’s Day vibes: coffee, love, productivity ☕💕, {{name}}</p>
+      <p>Happy Valentine’s! May your notifications be peaceful 🔕❤️, {{name}}</p>
+      <p>Wishing you a heart full of joy and a calendar without conflicts 💌, {{name}}</p>
+      <p>Cupid called—he said take a short break today 😄💘, {{name}}</p>
+      <p>Happy Valentine’s! Don’t forget to smile between tasks 😊💖, {{name}}</p>
+      <p>Even spreadsheets deserve love today ❤️📊, {{name}}</p>
+      <p>Sending a little office love your way 💼💌, {{name}}</p>
+      <p>Happy Valentine’s! Tasks can wait for chocolate 🍫✨, {{name}}</p>
+      <p>Roses are red, deadlines are near, don’t forget to enjoy this day dear 😆, {{name}}</p>
+      <p>Valentine’s Day at work? Let’s make it fun 💖💻, {{name}}</p>
+      <p>Happy Valentine’s! May your inbox be kind today 💌, {{name}}</p>
+      <p>Sending virtual hugs and heart emojis to all coworkers 🤗❤️, {{name}}</p>
+      <p>Teamwork and love go hand in hand 💕 Happy Valentine’s, {{name}}!</p>
+      <p>Happy Valentine’s! Let’s turn coffee into productivity ☕💖, {{name}}</p>
+      <p>Love is sweet, but office snacks are sweeter 😄🍩, {{name}}</p>
+      <p>Valentine’s reminder: deadlines can wait, smiles cannot 😊💌, {{name}}</p>
+      <p>Happy Valentine’s! Don’t forget to appreciate your teammates ❤️, {{name}}</p>
+      <p>Cupid approves of our team spirit 😄💘, {{name}}</p>
+      <p>Love your work, but don’t forget to love yourself too 💖, {{name}}</p>
+      <p>Happy Valentine’s! Today, deadlines can be gentle 😅, {{name}}</p>
+      <p>Work, love, repeat ❤️💼, {{name}}</p>
+      <p>Sending positive vibes and heart emojis 💌✨ Happy Valentine’s, {{name}}!</p>
+      <p>Roses are red, coffee is hot, happy Valentine’s! 😆☕, {{name}}</p>
+      <p>Happy Valentine’s! May your tasks be easy and your heart happy 💖, {{name}}</p>
+      <p>Love in the air, productivity everywhere 😄💌, {{name}}</p>
+      <p>Valentine’s Day edition: smiles over stress today 😊❤️, {{name}}</p>
+      <p>Happy Valentine’s! Treat yourself between tasks 💝, {{name}}</p>
+      <p>Even reports deserve a little love today 💖📄, {{name}}</p>
+      <p>Valentine’s Day vibes: heart emojis in the chat 💌😄, {{name}}</p>
+      <p>Work is sweeter with a little Valentine’s cheer 💕💼, {{name}}</p>
+      <p>Happy Valentine’s! Don’t forget to share a smile 😊❤️, {{name}}</p>
+      <p>May your coffee be strong and your heart stronger today 💖☕, {{name}}</p>
+    </div>
+
+</div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

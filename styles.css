@@ -1,0 +1,449 @@
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 95vh; /* full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+
+/* Video Background */
+.hero .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(221, 15, 97, 0.4); /* subtle pink overlay */
+  z-index: 1;
+}
+
+/* Text */
+.hero .text {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.hero .text h1 {
+font-family: 'Montserrat',  'Open Sans', sans-serif;
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+}
+
+.hero .text h3 {
+font-family: 'Raleway', 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Form container */
+.hero .form-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Label */
+.hero .form-container label {
+font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+
+/* Input field */
+.hero .form-container input {
+  color: rgb(235, 103, 125);
+  font-weight: bold;
+  font-family: 'Raleway', 'Open Sans', sans-serif;
+  width: 260px;
+  padding: 12px 16px;
+  border-radius: 30px; /* soft rounded look */
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  box-shadow: 0 8px 20px rgba(255, 0, 102, 0.15);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.hero .form-container input:focus {
+  border: 2px solid #ff4d88;
+  box-shadow: 0 10px 25px rgba(255, 0, 102, 0.3);
+}
+
+.hero .button-group {
+  display: flex;
+  flex-direction: column; /* THIS makes it vertical */
+  align-items: center;
+  gap: 14px;
+}
+
+
+/* Button container (stack buttons vertically) */
+.hero .button {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; /* vertical */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button h3{
+    font-family: 'Montserrat',  'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+
+/* Button */
+.hero .button button {
+
+  font-family: 'Raleway', 'Open Sans', sans-serif;
+  padding: 12px 36px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #ff0066, #ff5fa2);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(255, 0, 102, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero .button button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 35px rgba(255, 0, 102, 0.6);
+}
+
+.hero .button button:active {
+  transform: scale(0.98);
+  box-shadow: 0 8px 18px rgba(255, 0, 102, 0.4);
+}
+
+
+
+
+@media (min-width: 768px) {
+
+  .hero {
+    height: 100vh;
+  }
+
+  .hero .text {
+    margin-bottom: 24px;
+  }
+
+  .hero .text h1 {
+    font-size: 3.8rem;
+  }
+
+  .hero .text h3 {
+    font-size: 1.8rem;
+  }
+
+  .hero .form-container label {
+    font-size: 1.1rem;
+  }
+
+  .hero .form-container input {
+    width: 320px;
+    font-size: 1.05rem;
+    padding: 14px 18px;
+  }
+
+  .button h3 {
+    font-size: 1.05rem;
+  }
+
+  .hero .button-group {
+    gap: 16px;
+  }
+
+  .hero .button button {
+    font-size: 1.05rem;
+    padding: 14px 42px;
+  }
+}
+
+
+/* =========================
+   LAPTOP (≥1024px)
+========================= */
+@media (min-width: 1024px) {
+
+  .hero .text {
+    margin-bottom: 32px;
+  }
+
+  .hero .text h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero .text h3 {
+    font-size: 2rem;
+  }
+
+  .hero .form-container {
+    gap: 16px;
+  }
+
+  .hero .form-container label {
+    font-size: 1.2rem;
+  }
+
+  .hero .form-container input {
+    width: 380px;
+    font-size: 1.1rem;
+    padding: 16px 20px;
+  }
+
+  .button h3 {
+    font-size: 1.15rem;
+  }
+
+  .hero .button-group {
+    gap: 18px;
+  }
+
+  .hero .button button {
+    font-size: 1.1rem;
+    padding: 16px 50px;
+  }
+}
+
+
+/* =========================
+   LARGE DESKTOP (≥1440px)
+========================= */
+@media (min-width: 1440px) {
+
+  .hero .text h1 {
+    font-size: 5.2rem;
+  }
+
+  .hero .text h3 {
+    font-size: 2.3rem;
+  }
+
+  .hero .form-container label {
+    font-size: 1.3rem;
+  }
+
+  .hero .form-container input {
+    width: 420px;
+    font-size: 1.2rem;
+    padding: 18px 22px;
+  }
+
+  .button h3 {
+    font-size: 1.25rem;
+  }
+
+  .hero .button-group {
+    gap: 22px;
+  }
+
+  .hero .button button {
+    font-size: 1.2rem;
+    padding: 18px 60px;
+  }
+}
+/* =========================
+   MOBILE FIRST MODAL STYLES
+========================= */
+
+/* MODAL BACKDROP */
+.val-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* MODAL BOX */
+.modal-content {
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  width: 80%;
+  border-radius: 18px;
+  text-align: center;
+  overflow: hidden; /* contain video */
+  animation: popIn 0.3s ease;
+  box-shadow: 0 12px 30px rgba(255, 0, 102, 0.3);
+  color: white;
+  padding: 30px 20px; /* for mobile */
+}
+
+
+
+/* Video as modal background */
+.modal-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
+/* Overlay for readability */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
+  z-index: 1;
+}
+
+
+/* Text and close button above overlay */
+.modal-content h2,
+.modal-content p,
+.close-modal {
+  position: relative;
+  z-index: 2;
+}
+
+
+.modal-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #f0e2e7;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  
+}
+
+.modal-content p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* Close button */
+.close-modal {
+  top: 10px;
+  right: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ff0066;
+  position: absolute;
+}
+
+/* ANIMATION */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Tablets and above */
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 400px;
+    padding: 30px 25px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .close-modal {
+    font-size: 1.8rem;
+    top: 12px;
+    right: 16px;
+  }
+
+  .val-modal {
+    padding: 20px;
+  }
+}
+
+/* Desktops and large screens */
+@media (min-width: 1024px) {
+  .modal-content {
+    max-width: 480px;
+    padding: 35px 30px;
+    box-shadow: 0 20px 40px rgba(255, 0, 102, 0.4);
+  }
+
+  .modal-content h2 {
+    font-size: 2rem;
+  }
+
+  .modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .close-modal {
+    font-size: 2rem;
+    top: 14px;
+    right: 18px;
+  }
+}
+
+/* Large desktops / 1440px+ */
+@media (min-width: 1440px) {
+  .modal-content {
+    max-width: 520px;
+    padding: 40px 35px;
+  }
+
+  .modal-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .modal-content p {
+    font-size: 1.3rem;
+    line-height: 1.9;
+  }
+
+  .close-modal {
+    font-size: 2.2rem;
+  }
+}
