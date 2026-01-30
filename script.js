@@ -55,3 +55,28 @@ closeBtn.addEventListener("click", () => {
 window.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
+
+
+
+const bgVideo = document.querySelector(".bg-video");
+
+// Try playing the video on load
+window.addEventListener("load", () => {
+  bgVideo.play().catch(() => {
+    // fallback for mobile: play on first user interaction
+    document.body.addEventListener("touchstart", () => {
+      bgVideo.play();
+    }, { once: true });
+  });
+});
+
+
+
+
+
+
+
+
+
+const music = document.querySelector('audio');
+music.volume = 0.5; // 50% volume
