@@ -74,9 +74,20 @@ window.addEventListener("load", () => {
 
 
 
+const bgMusic = document.getElementById("bgMusic");
 
-
-
-
-const music = document.querySelector('audio');
-music.volume = 0.5; // 50% volume
+// Try playing the music on page load
+window.addEventListener("load", () => {
+  bgMusic.play().catch(() => {
+    console.log("Autoplay blocked. Music will play after first interaction.");
+    
+    // Mobile fallback: play music after first tap
+    document.body.addEventListener(
+      "click",
+      () => {
+        bgMusic.play();
+      },
+      { once: true }
+    );
+  });
+});
