@@ -20,10 +20,9 @@
 <body>
 
   <audio id="bgMusic" autoplay loop>
-  <source src="bs-music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
+    <source src="bs-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <!-- NAVIGATION HEADER -->
   <header class="navbar">
@@ -34,63 +33,68 @@
     </div>
   </header>
 
+  <main>
+    <section class="hero">
 
-<main>
-  <section class="hero">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        class="bg-video"
+      >
+        <source src="home-bg.mp4" type="video/mp4">
+      </video>
 
-    <!-- Video Background -->
-    <video autoplay muted loop class="bg-video">
-      <source src="home-bg.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+      <div class="text">
+        <h1>HAPPY VALENTINES DAY</h1>
+        <h3>MEPANGILINAN GROUP OF COMPANIES</h3>
+      </div>
 
-    <div class="text">
-      <h1>HAPPY VALENTINES DAY</h1>
-      <h3>MEPANGILINAN GROUP OF COMPANIES</h3>
-    </div>
-
-    <div class="form-container">
-      <label for="userName">Enter your name here: <span style="color:red">*</span></label>
-      <input type="text" id="userName" placeholder="Your name" required>
-    </div>
-
-
-
-  <div class="button">
-  <h3>Click here which one you wanna see!</h3>
-  <div class="button-group">
-    <button class="val-btn cute">Cute</button>
-    <button class="val-btn romantic">Romantic</button>
-     <button class="val-btn witty">Witty</button>
-  </div>
+   <div class="form-container">
+  <label for="userName">Enter your name here: <span style="color:red">*</span></label>
+  <input type="text" id="userName" placeholder="Your name" required>
 </div>
 
 
-  </section>
-</main>
+      <!-- BUTTONS (hidden initially) -->
+      <div class="button" style="display:none;">
+        <h3>Click here which one you wanna see!</h3>
+        <div class="button-group">
+          <button class="val-btn cute">Cute</button>
+          <button class="val-btn romantic">Romantic</button>
+          <button class="val-btn witty">Witty</button>
+        </div>
+      </div>
 
+    </section>
+  </main>
 
+  <!-- MODAL -->
+  <div class="val-modal" id="valModal">
+    <div class="modal-content">
+      <!-- Modal video background -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        class="modal-bg-video"
+      >
+        <source src="home-bg.mp4" type="video/mp4">
+      </video>
 
+      <!-- Overlay for readability -->
+      <div class="modal-overlay"></div>
 
-<div class="val-modal" id="valModal">
-  <!-- Modal box -->
-  <div class="modal-content">
-    <!-- Background video inside modal -->
-    <video autoplay muted loop class="modal-bg-video">
-      <source src="modal-bg.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- Overlay to make text readable -->
-    <div class="modal-overlay"></div>
-
-    <!-- Modal content text -->
-    <span class="close-modal">&times;</span>
-    <h2 id="modalTitle">Your Valentine</h2>
-    <p id="modalMessage">Message will appear here...</p>
+      <!-- Modal text content -->
+      <span class="close-modal">&times;</span>
+      <h2 id="modalTitle">Your Valentine</h2>
+      <p id="modalMessage">Message will appear here...</p>
+    </div>
   </div>
-</div>
-
 
 
 <!-- HIDDEN MESSAGE TEMPLATES -->

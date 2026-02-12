@@ -9,6 +9,10 @@ const cuteBtn = document.querySelector(".val-btn.cute");
 const romanticBtn = document.querySelector(".val-btn.romantic");
 const wittyBtn = document.querySelector(".val-btn.witty");
 
+// INPUT CONTAINER
+const formContainer = document.querySelector(".form-container");
+const buttonContainer = document.querySelector(".button");
+
 // INPUT
 const nameInput = document.getElementById("userName");
 
@@ -29,65 +33,60 @@ function openModal(type) {
     return;
   }
 
-  // Get a random message from HTML and replace {{name}} with actual name
   const messageTemplate = getRandomMessage(type);
   const finalMessage = messageTemplate.replace(/{{name}}/g, name);
 
-  // Set modal title and message
   modalTitle.textContent = type === "cute" ? `Hi ${name} 🥰` : `Dear ${name} ❤️`;
   modalMessage.innerHTML = finalMessage;
 
-  // Show modal
   modal.style.display = "flex";
 }
+
+// SHOW INITIAL MODAL ON PAGE LOAD
+window.addEventListener("load", () => {
+  modalTitle.textContent = "Welcome!";
+  modalMessage.innerHTML = "Your Valentine message will appear here... 💌";
+  modal.style.display = "flex";
+
+  // Hide input/buttons initially
+  formContainer.style.display = "none";
+  buttonContainer.style.display = "none";
+});
+
+// CLOSE MODAL
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+
+  // Show input and buttons after initial modal is closed
+  formContainer.style.display = "block";
+  buttonContainer.style.display = "block";
+});
+
+// CLOSE WHEN CLICKING OUTSIDE
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    formContainer.style.display = "block";
+    buttonContainer.style.display = "block";
+  }
+});
 
 // BUTTON EVENTS
 cuteBtn.addEventListener("click", () => openModal("cute"));
 romanticBtn.addEventListener("click", () => openModal("romantic"));
 wittyBtn.addEventListener("click", () => openModal("witty"));
 
-// CLOSE MODAL
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// CLOSE WHEN CLICKING OUTSIDE
-window.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
-});
-
-
-
+// BG VIDEO & MUSIC
 const bgVideo = document.querySelector(".bg-video");
-
-// Try playing the video on load
 window.addEventListener("load", () => {
   bgVideo.play().catch(() => {
-    // fallback for mobile: play on first user interaction
-    document.body.addEventListener("touchstart", () => {
-      bgVideo.play();
-    }, { once: true });
+    document.body.addEventListener("touchstart", () => bgVideo.play(), { once: true });
   });
 });
 
-
-
-
-
 const bgMusic = document.getElementById("bgMusic");
-
-// Try playing the music on page load
 window.addEventListener("load", () => {
   bgMusic.play().catch(() => {
-    console.log("Autoplay blocked. Music will play after first interaction.");
-    
-    // Mobile fallback: play music after first tap
-    document.body.addEventListener(
-      "click",
-      () => {
-        bgMusic.play();
-      },
-      { once: true }
-    );
+    document.body.addEventListener("click", () => bgMusic.play(), { once: true });
   });
 });
